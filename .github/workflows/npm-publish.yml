@@ -17,12 +17,15 @@ jobs:
       - run: npm install
       - run: npm run test
 
-  contrib-readme-job:
+  publish-npm:
     needs: tests
     runs-on: ubuntu-latest
-    name: A job to automate contrib in readme
     steps:
-      - name: Contribute List
-        uses: akhilmhdh/contributors-readme-action@v2.3.6
-        env:
-          GITHUB_TOKEN: ${{ secrets.README_GITHUB_TOKEN }}
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 18
+      - run: npm install && npm run build:prod
+      - uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_TOKEN }}

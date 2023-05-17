@@ -2,12 +2,13 @@
   "name": "@useutils/key-value",
   "version": "0.0.9",
   "description": "",
-  "main": "index.js",
+  "main": "lib/index.ts",
   "directories": {
     "lib": "lib"
   },
   "scripts": {
-    "build": "tsc --build tsconfig.json",
+    "build:prod": "npm run build -- --project ./tsconfig.build.json",
+    "build": "rimraf dist && tsc",
     "test": "jest"
   },
   "keywords": [],
