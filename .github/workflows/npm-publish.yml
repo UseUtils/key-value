@@ -17,11 +17,9 @@ jobs:
       - run: npm install
       - run: npm run test
 
-  publish-npm:
+  contrib-readme-job:
     runs-on: ubuntu-latest
+    name: A job to automate contrib in readme
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-      - run: npm publish --access public
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
+      - name: Contribute List
+        uses: akhilmhdh/contributors-readme-action@v2.3.6
