@@ -12,7 +12,7 @@
   ],
   "scripts": {
     "build:prod": "npm run build -- --project ./tsconfig.build.json",
-    "build": "rimraf dist && tsc",
+    "build": "rimraf dist && tsc --declaration",
     "test": "jest"
   },
   "keywords": [],
