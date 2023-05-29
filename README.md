@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="public/hero.svg"/>
+  <img src="https://raw.githubusercontent.com/UseUtils/key-value/d089b1e567dc7542608c8ab0028d9c8d00b653b1/public/hero.svg"/>
   <h1>Key Value</h1>
 </div>
 
